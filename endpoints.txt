@@ -1,0 +1,73 @@
+auth/sign-in:POST {
+    require: {
+        body: { token: "token do google" }
+    },
+    response: {
+        email,
+        firstName,
+        lastName,
+        theme,
+        reciveEmail,
+    }
+}
+auth/me:DELETE {
+    require: {
+        headers: {
+            authorization: "Bearer aklsdjfjasldjflajfklçasja"
+        }
+    }
+    response: {
+        msg
+    }
+}
+auth/change-country:POST {
+    require: {
+        headers: {
+            authorization: "Bearer alçsdfjlajsdjaçajs"
+        },
+        body: {
+            newCountry
+        }
+    },
+    response: {
+        msg
+    }
+}
+dashboard:GET {
+    require: {
+        headers: {
+            authorization: "Bearer çalsdlfjlasjfljasklfjlsjfl"
+        }
+    }
+    response: {
+        mapOfStates: [
+            {
+                state: "SP",
+                weather: "sunny"
+            }
+        ],
+        fiveCitiesWeather: [
+            {
+                name: "Sao Paulo",
+                temperature: {
+                    type: "Celsius",
+                    value: 20
+                },
+                weather: "sunny"
+            }
+        ],
+        rainForecasts: [
+            {
+                city: "Sao Paulo",
+                lastSixDays: 15,
+                nextSixDays: 15
+            }
+        ],
+        lastNews: [
+            {
+                title: "Strong rains in next week",
+                content: "balblabbllab"
+            }
+        ]
+    }
+}
