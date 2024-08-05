@@ -25,15 +25,35 @@ module.exports = {
           isIn: [["light", "dark"]]
         }
       },
-      receiveEmail: {
+      recive_email: {
         type: Sequelize.BOOLEAN,
         allowNull: false
       },
       country: {
         type: Sequelize.STRING,
         allowNull: false
+      },
+      state: {
+        type: Sequelize.STRING,
+        allowNull: true
+      },
+      city: {
+        type: Sequelize.STRING,
+        allowNull: true
+      },
+      token: {
+        type: Sequelize.CHAR(1200),
+        allowNull: false
+      },
+      updated_at: {
+        type: Sequelize.STRING,
+        allowNull: false
+      },
+      created_at: {
+        type: Sequelize.STRING,
+        allowNull: false
       }
-    })
+    });
   },
 
   async down (queryInterface, Sequelize) {
